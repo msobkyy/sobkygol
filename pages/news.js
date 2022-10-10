@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import { useRouter } from "next/router";
 import Response4 from "../Response4";
 import NewsResults from "../components/search-container/NewsResults";
-function news({ results }) {
+function News({ results }) {
   const router = useRouter();
 
   return (
@@ -21,7 +21,7 @@ function news({ results }) {
   );
 }
 
-export default news;
+export default News;
 
 export async function getServerSideProps(context) {
   const useDummyData = false;

@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import ImagesResults from "../components/search-container/ImagesResults";
 import Response3 from "../Response3";
 
-function images({ results }) {
+function Images({ results }) {
   const router = useRouter();
   return (
     <div>
@@ -21,7 +21,7 @@ function images({ results }) {
   );
 }
 
-export default images;
+export default Images;
 
 export async function getServerSideProps(context) {
   const useDummyData = false;

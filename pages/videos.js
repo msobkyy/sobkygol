@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import VideosResults from "../components/search-container/VideosResults";
 import Response4 from "../Response4";
 
-function videos({ results }) {
+function Videos({ results }) {
   const router = useRouter();
 
   return (
@@ -22,7 +22,7 @@ function videos({ results }) {
   );
 }
 
-export default videos;
+export default Videos;
 
 export async function getServerSideProps(context) {
   const useDummyData = false;
