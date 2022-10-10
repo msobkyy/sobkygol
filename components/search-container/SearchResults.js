@@ -22,18 +22,20 @@ function SearchResults({ results, related }) {
                 <a
                   href={result.link}
                   target="_blank"
-                  rel="noreffer"
+                  rel="noreferrer"
                   className="text-sm line-clamp-1"
                 >
                   {result.formattedUrl}
                 </a>
-                <a href={result.link} target="_blank" rel="noreffer">
+                <a href={result.link} target="_blank" rel="noreferrer">
                   <h2 className="text-xl text-blue-600 dark:text-blue-400 mb-3 truncate group-hover:underline">
                     {result.title}
                   </h2>
                 </a>
               </div>
-              <p className="line-clamp-3 text-gray-500  dark:text-gray-300">{result.snippet}</p>
+              <p className="line-clamp-3 text-gray-500  dark:text-gray-300">
+                {result.snippet}
+              </p>
             </div>
           ))}
         </div>
