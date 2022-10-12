@@ -8,6 +8,7 @@ import Response3 from "../Response3";
 
 function Images({ results }) {
   const router = useRouter();
+  
   return (
     <div>
       <Head>

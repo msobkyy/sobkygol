@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import { useRouter } from "next/router";
 import Response4 from "../Response4";
 import NewsResults from "../components/search-container/NewsResults";
-function News({ results }) {
+function News({ results, related }) {
   const router = useRouter();
 
   return (
@@ -15,7 +15,7 @@ function News({ results }) {
         <link rel="icon" href="/favicon.ico?v=2" />
       </Head>
       <Header q={router.query.q} />
-      <NewsResults results={results} />
+      <NewsResults results={results} related={related} />
       <Footer />
     </div>
   );
@@ -54,9 +54,27 @@ export async function getServerSideProps(context) {
         options
       ).then((response) => response.json());
 
+  const relatedOptions = {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      "X-RapidAPI-Key": rapidkey,
+      "X-RapidAPI-Host": "google-search-5.p.rapidapi.com",
+    },
+    body: `{"gl":"US","hl":"en_US","keywords":["${context.query.q}"]}`,
+  };
+
+  const relatedData = useDummyData
+    ? Response2
+    : await fetch(
+        "https://google-search-5.p.rapidapi.com/google/search-suggestions",
+        relatedOptions
+      ).then((response) => response.json());
+
   return {
     props: {
       results: secData,
+      related: relatedData,
     },
   };
 }

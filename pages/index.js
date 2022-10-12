@@ -28,7 +28,7 @@ export default function Home() {
     router.push(`/search?q=${term}`);
   };
   return (
-    <div className="flex flex-col  justify-center h-screen items-center dark:bg-primary-dark dark:text-white">
+    <div className="flex flex-col justify-center h-screen min-h-[700px] items-center dark:bg-primary-dark dark:text-white">
       <Head>
         <title>SobkyGol</title>
         <meta
@@ -66,13 +66,13 @@ export default function Home() {
           >
             Images
           </a>
-          <Squares2X2Icon className="h-10 w-10 p-2 hover:bg-gray-100 cursor-pointer" />
+          <Squares2X2Icon className="h-10 w-10 p-2 hover:bg-gray-200 dark:hover:bg-secondary-dark rounded-lg cursor-pointer" />
           <Avatar />
         </div>
       </header>
 
       <form className="flex flex-col items-center mt-24 flex-grow w-4/5">
-        <Image src="/images/SobkyGol.png" height={90} width={320} />
+        <Image alt="SobkyGol" src="/images/SobkyGol.png" height={90} width={320} />
         <div
           className={`w-full flex mt-5 px-5 py-3 items-center hover:shadow-md focus-within:shadow-md max-w-md rounded-full border-gray-200 border-[1.5px] sm:max-w-xl lg:max-w-2xl dark:bg-secondary-dark  dark:border-gray-500 ${
             !isValid ? "border-red-300 dark:border-red-400 " : ""

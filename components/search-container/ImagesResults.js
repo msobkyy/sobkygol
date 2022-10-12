@@ -2,26 +2,28 @@ import Image from "next/image";
 import React from "react";
 
 function ImagesResults({ results }) {
+  const validURL = (str) => {
+    if (str === null || str === undefined || str.length < 5) {
+      return "https://dummyimage.com/200x100/";
+    } else {
+      return str;
+    }
+  };
   return (
     <div className="container mx-auto my-10">
-      <div className="grid-cols-2 grid sm:grid-cols-7">
+      <div className="grid-cols-2 grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 px-1">
         {results?.data?.results?.map((index) => (
-          <a
-            key={index}
-            href={index}
-            target="_blank"
-            rel="noreferrer"
-            className="sm:p-3 p-3"
-          >
-            <div className="w-full ">
+          <div key={index} className="w-full p-2">
+            <a href={index} target="_blank" rel="noreferrer">
               <Image
-                src={`https://res.cloudinary.com/demo/image/fetch/${index}`}
+                alt="search image result"
+                src={`https://res.cloudinary.com/demo/image/fetch/${validURL(index)}`}
                 height={100}
                 width={200}
                 className="rounded-lg border shadow imgsearch"
               />
-            </div>
-          </a>
+            </a>
+          </div>
         ))}
       </div>
     </div>

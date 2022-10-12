@@ -3,7 +3,6 @@ import dynamic from 'next/dynamic'
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false })
 
 function VideosResults({ results }) {
-    console.log(results)
   return (
     <div className="flex flex-wrap justify-center items-start  gap-4 my-7">
       {results?.data?.results?.map(({ url, title }, index) => (

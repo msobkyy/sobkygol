@@ -33,6 +33,7 @@ function Header({ q }) {
       <div className="grid sm:grid-cols-12 p-5 items-center">
         <div className="flex justify-center sm:col-span-1 mb-4 sm:mb-0">
           <Image
+            alt="SobkyGol icon"
             src="/images/SobkyGol.png"
             height={40}
             width={150}
@@ -62,7 +63,10 @@ function Header({ q }) {
               }}
             />
             <MicrophoneIcon className="h-6 mr-3 hidden sm:inline-flex text-blue-400 border-l-2 pl-4 border-gray-300" />
-            <MagnifyingGlassIcon className="h-6 text-blue-400  ml-2" />
+            <MagnifyingGlassIcon
+              className="h-6 text-blue-400  ml-2 cursor-pointer transition duration-100 hover:scale-125"
+              onClick={search}
+            />
             <button hidden type="submit" onClick={search}></button>
           </form>
           <Avatar className="ml-auto fixed top-5 right-5 sm:static" />
