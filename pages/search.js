@@ -10,7 +10,6 @@ import Footer from "../components/Footer";
 
 function Search({ results, related }) {
   const router = useRouter();
-  console.log(results);
   return (
     <div>
       <Head>

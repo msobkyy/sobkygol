@@ -42,7 +42,7 @@ function SearchResults({ results, related }) {
 
         <div className="col-span-12 lg:col-span-5 p-4">
           <h2 className="text-lg">People are also looking for :</h2>
-          <div className="grid lg:grid-cols-2 grid-cols-1 lg:pr-6 max-w-sm lg:max-w-2xl">
+          <div className="grid lg:grid-cols-2 grid-cols-1 lg:pr-6 md:max-w-sm lg:max-w-2xl">
             {related?.data[0]?.suggestions.map(({ question }, index) => (
               <a
                 href="#"

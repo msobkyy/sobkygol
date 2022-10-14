@@ -14,8 +14,8 @@ function NewsResults({ results, related }) {
   };
 
   return (
-    <div className="grid grid-cols-12 mx-2 my-10 lg:ml-44">
-      <div className="col-span-12 lg:col-span-7 p-2 sm:pr-10">
+    <div className="grid grid-cols-12 mx-2 my-10 md:ml-24 lg:ml-44">
+      <div className="col-span-12 lg:col-span-7 p-2 md:pr-10">
         {results?.data?.results?.map(
           ({ url, title, snippet, date_time, source, image }, index) => (
             <div
@@ -66,7 +66,7 @@ function NewsResults({ results, related }) {
 
       <div className="col-span-12 lg:col-span-5 p-5 ">
         <h2 className="text-lg">People are also looking for :</h2>
-        <div className="grid lg:grid-cols-2 grid-cols-1 lg:pr-6 max-w-sm lg:max-w-2xl">
+        <div className="grid lg:grid-cols-2 grid-cols-1 lg:pr-6 md:max-w-sm lg:max-w-2xl">
           {related?.data[0]?.suggestions.map(({ question }, index) => (
             <a
               href="#"
