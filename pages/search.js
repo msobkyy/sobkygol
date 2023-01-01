@@ -26,7 +26,7 @@ function Search({ results, related }) {
 export default Search;
 
 export async function getServerSideProps(context) {
-  const useDummyData = false;
+  const useDummyData = true;
   const apikey = process.env.API_KEY;
   const cxkey = process.env.CONTEXTS_KEY;
   const rapidkey = process.env.RAPID_KEY;

@@ -3,6 +3,8 @@ import Head from "next/head";
 import Header from "../components/header/Header";
 import Footer from "../components/Footer";
 import { useRouter } from "next/router";
+import Response3 from "../Response3";
+import Response2 from "../Response2";
 import Response4 from "../Response4";
 import NewsResults from "../components/search-container/NewsResults";
 function News({ results, related }) {
@@ -24,7 +26,7 @@ function News({ results, related }) {
 export default News;
 
 export async function getServerSideProps(context) {
-  const useDummyData = false;
+  const useDummyData = true;
   const rapidkey = process.env.RAPID_KEY;
   const q = context.query.q;
 

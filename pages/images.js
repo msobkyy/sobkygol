@@ -8,7 +8,7 @@ import Response3 from "../Response3";
 
 function Images({ results }) {
   const router = useRouter();
-  
+
   return (
     <div>
       <Head>
@@ -25,7 +25,7 @@ function Images({ results }) {
 export default Images;
 
 export async function getServerSideProps(context) {
-  const useDummyData = false;
+  const useDummyData = true;
   const rapidkey = process.env.RAPID_KEY;
   const q = context.query.q;
 

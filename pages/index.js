@@ -72,7 +72,12 @@ export default function Home() {
       </header>
 
       <form className="flex flex-col items-center mt-24 flex-grow w-4/5">
-        <Image alt="SobkyGol" src="/images/SobkyGol.png" height={90} width={320} />
+        <Image
+          alt="SobkyGol"
+          src="/images/SobkyGol.png"
+          height={90}
+          width={320}
+        />
         <div
           className={`w-full flex mt-5 px-5 py-3 items-center hover:shadow-md focus-within:shadow-md max-w-md rounded-full border-gray-200 border-[1.5px] sm:max-w-xl lg:max-w-2xl dark:bg-secondary-dark  dark:border-gray-500 ${
             !isValid ? "border-red-300 dark:border-red-400 " : ""
@@ -84,6 +89,10 @@ export default function Home() {
             ref={searchInput}
           />
           <MicrophoneIcon className="h-5 mr-3 text-gray-500" />
+        </div>
+        <div className="pt-3">
+          the search is using dummy data right now because the api resources is
+          exhausted
         </div>
         <div className="flex mt-8 space-x-3">
           <button onClick={search} className="btn">

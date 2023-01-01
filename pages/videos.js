@@ -25,7 +25,7 @@ function Videos({ results }) {
 export default Videos;
 
 export async function getServerSideProps(context) {
-  const useDummyData = false;
+  const useDummyData = true;
   const rapidkey = process.env.RAPID_KEY;
   const q = context.query.q;
 
